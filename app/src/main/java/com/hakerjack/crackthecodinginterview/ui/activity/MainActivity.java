@@ -1,15 +1,16 @@
-package com.hakerjack.crackthecodinginterview;
+package com.hakerjack.crackthecodinginterview.ui.activity;
 
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+
+import com.hakerjack.crackthecodinginterview.R;
+import com.hakerjack.crackthecodinginterview.ui.adapter.SidebarAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;

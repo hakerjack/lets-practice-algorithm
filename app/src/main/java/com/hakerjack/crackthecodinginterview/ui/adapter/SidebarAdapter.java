@@ -1,4 +1,4 @@
-package com.hakerjack.crackthecodinginterview;
+package com.hakerjack.crackthecodinginterview.ui.adapter;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
@@ -6,6 +6,8 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+
+import com.hakerjack.crackthecodinginterview.R;
 
 /**
  * Created by kjia on 3/5/16.
