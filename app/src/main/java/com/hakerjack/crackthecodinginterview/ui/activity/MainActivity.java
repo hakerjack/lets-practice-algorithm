@@ -15,7 +15,7 @@ import com.hakerjack.crackthecodinginterview.ui.adapter.SidebarAdapter;
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private LinearLayout mMainContainer;
-    private ListView mSidebarListView;
+    //private ListView mSidebarListView;
     private ImageView mSidebarIcon;
     private ImageView mInfoIcon;
 
@@ -32,15 +32,15 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mMainContainer = (LinearLayout) findViewById(R.id.main_container);
-        mSidebarListView = (ListView) findViewById(R.id.sidebar);
+        //mSidebarListView = (ListView) findViewById(R.id.sidebar);
 
         mSidebarIcon = (ImageView) mMainContainer.findViewById(R.id.sidebar_menu_icon);
         mInfoIcon = (ImageView) mMainContainer.findViewById(R.id.info_icon);
     }
 
     private void setUpDrawer() {
-        mSidebarAdapter = new SidebarAdapter(this);
-        mSidebarListView.setAdapter(mSidebarAdapter);
+        //mSidebarAdapter = new SidebarAdapter(this);
+        //mSidebarListView.setAdapter(mSidebarAdapter);
         mSidebarIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
