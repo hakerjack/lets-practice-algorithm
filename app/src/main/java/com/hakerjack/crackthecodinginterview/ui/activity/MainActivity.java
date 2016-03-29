@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 
 import com.hakerjack.crackthecodinginterview.R;
 import com.hakerjack.crackthecodinginterview.ui.fragment.MainFragment;
@@ -48,7 +49,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void initViews() {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mMainFragment = (MainFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment);
+        mMainFragment = new MainFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.main_fragment_container, mMainFragment)
+                .commit();
+
+//        mMainFragment = (MainFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -56,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_24dp);
             actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle(null);
         }
 
-        mMainFragment = (MainFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment);
     }
 
 }

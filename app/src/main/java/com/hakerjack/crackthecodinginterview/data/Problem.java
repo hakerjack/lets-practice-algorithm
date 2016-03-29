@@ -6,10 +6,14 @@ import com.orm.SugarRecord;
  * Created by kjia on 3/23/16.
  */
 public class Problem extends SugarRecord {
-    String title;
-    String content;
-    String example;
-    String note;
+    private String title;
+    private String content;
+    private String example;
+    private String note;
+
+    private int visitedTime;
+    private int completedTime;
+
 
     public Problem() {}
 
@@ -19,6 +23,9 @@ public class Problem extends SugarRecord {
         p.content = builder.content;
         p.example = builder.example;
         p.note = builder.note;
+        p.visitedTime = 0;
+        p.completedTime = 0;
+        p.save();
     }
 
     public String getTitle() {
@@ -35,6 +42,14 @@ public class Problem extends SugarRecord {
 
     public String getNote() {
         return note;
+    }
+
+    public void incrementVisitedTime() {
+        visitedTime++;
+    }
+
+    public void incrementCompleteTime() {
+        completedTime++;
     }
 
     public final static class Builder {

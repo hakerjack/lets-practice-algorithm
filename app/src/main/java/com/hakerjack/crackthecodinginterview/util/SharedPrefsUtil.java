@@ -9,4 +9,5 @@ public class SharedPrefsUtil {
      */
     public static final String PREFS_KEY_IS_FIRST_TIME = "first_time";
     public static final String PREFS_KEY_LAST_VIEW_PROBLEM_ID = "last_view_problem_id";
+    public static final String PREFS_KEY_MINIMUM_VISITED_TIME = "minimum_visited_time";
 }
