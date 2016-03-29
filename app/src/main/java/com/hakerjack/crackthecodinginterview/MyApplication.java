@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.hakerjack.crackthecodinginterview.data.Problem;
+import com.hakerjack.crackthecodinginterview.util.SharedPrefsUtil;
 import com.orm.SugarApp;
 import com.pixplicity.easyprefs.library.Prefs;
 
@@ -12,11 +13,6 @@ import com.pixplicity.easyprefs.library.Prefs;
  */
 public class MyApplication extends SugarApp {
     private Context mApplicationContext;
-
-    /**
-     * Shared Prefs keys. Move to a better place
-     */
-    private static final String PREFS_IS_FIRST_TIME = "first_time";
 
     @Override
     public void onCreate() {
@@ -32,9 +28,11 @@ public class MyApplication extends SugarApp {
                 .setUseDefaultSharedPreference(true)
                 .build();
 
-        boolean isFirstTime = Prefs.getBoolean(PREFS_IS_FIRST_TIME, true);
+        boolean isFirstTime = Prefs.getBoolean(SharedPrefsUtil.PREFS_KEY_IS_FIRST_TIME, true);
         if (isFirstTime) {
             setUpDatabaseData();
+        } else {
+            Log.i("KJ", "first time false");
         }
     }
 
@@ -44,6 +42,7 @@ public class MyApplication extends SugarApp {
                 .setContent("Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.")
                 .build();
         long id = p1.save();
-        Log.i("KJ", "id:" + id);
+
+        Prefs.putBoolean(SharedPrefsUtil.PREFS_KEY_IS_FIRST_TIME, false);
     }
 }

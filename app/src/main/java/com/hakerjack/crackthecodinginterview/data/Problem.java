@@ -21,6 +21,22 @@ public class Problem extends SugarRecord {
         p.note = builder.note;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getExample() {
+        return example;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
     public final static class Builder {
         private String title;
         private String content;
