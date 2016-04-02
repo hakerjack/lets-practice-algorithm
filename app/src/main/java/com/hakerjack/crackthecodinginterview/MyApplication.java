@@ -31,8 +31,6 @@ public class MyApplication extends SugarApp {
         boolean isFirstTime = Prefs.getBoolean(SharedPrefsUtil.PREFS_KEY_IS_FIRST_TIME, true);
         if (isFirstTime) {
             setUpDatabaseData();
-        } else {
-            Log.i("KJ", "first time false");
         }
     }
 
@@ -41,7 +39,6 @@ public class MyApplication extends SugarApp {
                 .setTitle("Number of Islands")
                 .setContent("Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.")
                 .build();
-        long id = p1.save();
 
         Prefs.putBoolean(SharedPrefsUtil.PREFS_KEY_IS_FIRST_TIME, false);
     }

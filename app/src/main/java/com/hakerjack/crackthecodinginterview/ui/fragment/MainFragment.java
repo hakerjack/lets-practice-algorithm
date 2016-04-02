@@ -24,6 +24,10 @@ import java.util.Random;
  */
 public class MainFragment extends Fragment {
     private TextView mTitle;
+    private TextView mProblemContent;
+    private TextView mProblemExample;
+    private TextView mProblemNote;
+
     private TextView mInitialText;
     private Button mNextRandomButton;
 
@@ -38,15 +42,18 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
+        //TODO: use butter knife for view injection
         mTitle = (TextView) rootView.findViewById(R.id.problem_title);
+        mProblemContent = (TextView) rootView.findViewById(R.id.problem_content);
         mInitialText = (TextView) rootView.findViewById(R.id.initial_text);
+        mProblemExample = (TextView) rootView.findViewById(R.id.problem_example);
+        mProblemNote = (TextView) rootView.findViewById(R.id.problem_note);
 
         mNextRandomButton = (Button) rootView.findViewById(R.id.next_random_btn);
         mNextRandomButton.setOnClickListener(v -> {
             getRandomProblem();
         });
 
-        Log.i("KJ", "mainfragment oncreateview");
         loadLastProblem();
         return rootView;
     }
@@ -62,7 +69,6 @@ public class MainFragment extends Fragment {
 
     private void loadLastProblem() {
         long problemId = Prefs.getLong(SharedPrefsUtil.PREFS_KEY_LAST_VIEW_PROBLEM_ID, -1);
-        Log.i("KJ", "problem id:" + problemId);
         if (problemId == -1) {
             // no problem was loaded before. show an initial screen
             displayInitialScreen();
@@ -84,6 +90,7 @@ public class MainFragment extends Fragment {
             }
 
             mTitle.setText(mProblem.getTitle());
+            mProblemContent.setText(mProblem.getContent());
         }
     }
 
