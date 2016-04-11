@@ -8,8 +8,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
-        <item name="colorPrimary">#2196F3</item>
-        <item name="colorPrimaryDark">#1976D2</item>
+        <item name="colorPrimary">@color/white_100</item>
+        <item name="colorPrimaryDark">@color/white_100</item>
     </style>
 
 </resources>

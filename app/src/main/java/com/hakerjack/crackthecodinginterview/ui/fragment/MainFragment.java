@@ -3,12 +3,10 @@ package com.hakerjack.crackthecodinginterview.ui.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hakerjack.crackthecodinginterview.R;
@@ -29,7 +27,7 @@ public class MainFragment extends Fragment {
     private TextView mProblemNote;
 
     private TextView mInitialText;
-    private Button mNextRandomButton;
+    private Button mPickOneButton;
 
     private Problem mProblem;
 
@@ -49,8 +47,8 @@ public class MainFragment extends Fragment {
         mProblemExample = (TextView) rootView.findViewById(R.id.problem_example);
         mProblemNote = (TextView) rootView.findViewById(R.id.problem_note);
 
-        mNextRandomButton = (Button) rootView.findViewById(R.id.next_random_btn);
-        mNextRandomButton.setOnClickListener(v -> {
+        mPickOneButton = (Button) rootView.findViewById(R.id.next_random_btn);
+        mPickOneButton.setOnClickListener(v -> {
             getRandomProblem();
         });
 

@@ -52,7 +52,7 @@
         android:id="@+id/next_random_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Give me question"
+        android:text="@string/pick_problem"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
